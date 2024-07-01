@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+#search-bar {
+    width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+.movie-item {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.movie-item a {
+    text-decoration: none;
+    color: #333;
+}
