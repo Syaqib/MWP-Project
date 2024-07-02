@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,8 +6,20 @@ body {
     background-color: #f0f0f0;
 }
 
-h1 {
+h1, h2 {
     color: #333;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Search Bar and Button */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #search-bar {
@@ -15,10 +28,16 @@ h1 {
     margin-right: 10px;
 }
 
+#genre-select {
+    padding: 10px;
+    margin-right: 10px;
+}
+
 #search-button {
     padding: 10px 20px;
 }
 
+/* Search Results */
 #results {
     margin-top: 20px;
 }
@@ -33,4 +52,77 @@ h1 {
 .movie-item a {
     text-decoration: none;
     color: #333;
+}
+
+/* Movie Details Page */
+#movie-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#movie-details img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#movie-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+#movie-details p strong {
+    color: #000;
+}
+
+#movie-details a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#movie-details a:hover {
+    text-decoration: underline;
+}
+
+#add-to-watchlist {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#add-to-watchlist:hover {
+    background-color: #0056b3;
+}
+
+/* Movie Slider */
+.movie-slider {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+    gap: 20px;
+}
+
+.movie-slider .movie-item {
+    flex: 0 0 auto;
+    width: 200px;
+    cursor: pointer;
+}
+
+.movie-slider .movie-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
