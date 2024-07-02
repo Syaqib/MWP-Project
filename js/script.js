@@ -9,7 +9,6 @@ $(document).ready(function() {
         { title: "Real Steel", year: "2011" },
         { title: "Stand by Me Doraemon", year: "2014" }
     ];
-
     // Function to fetch and display featured movies
     function fetchFeaturedMovies() {
         featuredMovies.forEach(movie => {
@@ -78,8 +77,9 @@ $(document).ready(function() {
                                     output += `
                                         <li class="movie-item">
                                             <a href="movie-details.html?id=${movie.imdbID}">
-                                                ${movie.Title} (${movie.Year})
+                                                <img src="${movie.Poster}" alt="${movie.Title} Poster">
                                             </a>
+                                            <p>${movie.Title} (${movie.Year})</p>
                                         </li>
                                     `;
                                 }
@@ -133,7 +133,7 @@ $(document).ready(function() {
                         <p><strong>Duration:</strong> ${data.Runtime}</p>
                         <p><strong>Release Date:</strong> ${data.Released}</p>
                         <p><strong>Broadcaster:</strong> ${data.Production}</p>
-                        <p><a href="https://www.youtube.com/results?search_query=${data.Title} trailer" target="_blank">Watch Trailer</a></p>
+                        <p><a href="https://www.youtube.com/results?search_query=${data.Title} ${data.Year} trailer" target="_blank">Watch Trailer</a></p>
                         <button id="add-to-watchlist" data-id="${data.imdbID}">Add to Watchlist</button>
                     `;
                     $('#movie-details').html(output);

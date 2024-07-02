@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Enthusiasts</title>
+    <title>FilmFusion</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Movie Enthusiasts</h1>
+    <header>
+        <div class="header-container">
+            <h1>FilmFusion</h1>
+            <nav>
+                <a href="index.html" class="home-button">Home</a>
+            </nav>
+        </div>
+    </header>
+    
     <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search for movies...">
         <select id="genre-select">
@@ -16,7 +24,7 @@
             <option value="comedy">Comedy</option>
             <option value="adventure">Adventure</option>
             <option value="drama">Drama</option>
-            <option value="Animation">Animation</option>
+            <option value="animation">Animation</option>
             <option value="horror">Horror</option>
             <option value="thriller">Thriller</option>
             <!-- Add more genres as needed -->
@@ -28,6 +36,10 @@
 
     <h2>Featured Movies</h2>
     <div class="movie-slider" id="movie-slider"></div>
+    
+    <footer>
+        <p>All rights reserved. FilmFusion 2024</p>
+    </footer>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
