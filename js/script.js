@@ -20,7 +20,7 @@ $(document).ready(function() {
                         const movieItem = `
                             <div class="movie-item" data-id="${data.imdbID}">
                                 <img src="${data.Poster}" alt="${data.Title} Poster">
-                                <p>${data.Title} (${data.Year})</p>
+                                <h4>${data.Title} (${data.Year})</h4>
                             </div>
                         `;
                         $('#movie-slider').append(movieItem);
@@ -76,10 +76,21 @@ $(document).ready(function() {
                                     foundMovies = true;
                                     output += `
                                         <li class="movie-item">
-                                            <a href="movie-details.html?id=${movie.imdbID}">
-                                                <img src="${movie.Poster}" alt="${movie.Title} Poster">
-                                            </a>
-                                            <p>${movie.Title} (${movie.Year})</p>
+                                        <div class="search-movie">    
+                                            <div class="content">
+                                                <a href="movie-details.html?id=${movie.imdbID}">
+                                                    <img src="${movie.Poster}" alt="${movie.Title} Poster">                
+                                                </a>
+                                            
+                                            </div>
+                                            <div class="description">
+                                              <p>${movie.Title} (${movie.Year})</p>
+                                              <p><strong>Duration: </strong> ${movie.Runtime}</p>
+                                              <p><strong>Release Date:</strong> ${movie.Released}</p>
+                                              <p><strong>Cast:</strong> ${movie.Actors}</p>
+                                              <button id="add-to-watchlist" data-id="${data.imdbID}">Add to Watchlist</button>
+                                            </div>  
+                                        </div>
                                         </li>
                                     `;
                                 }

@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(2, 22, 34);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,7 +11,7 @@ body {
 }
 header {
     background-color: rgba(31, 68, 102, 0.8);
-    padding: 10px 0;
+    padding: 15px 0;
     width: 100%;
 }
 
@@ -25,21 +25,21 @@ header {
 }
 
 header h1 {
-    margin: 0;
-    font-size: 24px;
+    margin-top: 10px;
+    font-size: 36px;
 }
 
 nav .home-button {
-    background-color: #007BFF;
     color: #fff;
     padding: 10px 20px;
+    margin: 1200px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 nav .home-button:hover {
-    background-color: #0056b3;
+    background-color: #1a4069;
 }
 
 
@@ -54,6 +54,17 @@ h2 {
     font-size: 24px;
 }
 
+.content{
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+div.search-movie {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
 /* Search Bar and Button */
 .search-container {
     text-align: center;
@@ -105,18 +116,26 @@ h2 {
     align-items: baseline;
     padding: 10px;
     margin: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(21, 28, 43);
     border: 1px solid #ccc;
     border-radius: 20px;
     color: #ffffff;
     width: 1350px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.movie-item p {
 
+.movie-item p {
+    text-align: center;
+}
+.description{
+    width: 100%;
+}
+.description p {
+    width: 100%;
+    text-align: left;
 }
 .movie-item img {
-    width: 50%;
+    width: 70%;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -132,7 +151,9 @@ h2 {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+.movie-item h4 {
+    text-align: center;
+}
 /* Movie Details Page */
 #movie-details {
     background-color: rgba(0, 0, 0, 0.7);
@@ -173,7 +194,7 @@ h2 {
 }
 
 #add-to-watchlist {
-    background-color: #007BFF;
+    background-color: #1f4063;
     color: #fff;
     border: none;
     padding: 10px 20px;
