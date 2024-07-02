@@ -36,15 +36,17 @@ $(document).ready(function() {
             url: `http://www.omdbapi.com/?i=${movieId}&apikey=52d4ad03`,
             method: 'GET',
             success: function(data) {
+                console.log(data);
                 if (data.Response === "True") {
                     let output = `
                         <h2>${data.Title} (${data.Year})</h2>
+                        <img src="${data.Poster}" alt="${data.Title} Poster">
                         <p><strong>Director:</strong> ${data.Director}</p>
                         <p><strong>Cast:</strong> ${data.Actors}</p>
                         <p><strong>Genre:</strong> ${data.Genre}</p>
                         <p><strong>Plot:</strong> ${data.Plot}</p>
                         <p><strong>Duration:</strong> ${data.Runtime}</p>
-                        <p><strong>Production:</strong> ${data.Production}</p>
+                        <p><strong>Release Date:</strong> ${data.Released}</p>
                         <p><strong>Broadcaster:</strong> ${data.Production}</p>
                         <p><a href="https://www.youtube.com/results?search_query=${data.Title} trailer" target="_blank">Watch Trailer</a></p>
                         <button id="add-to-watchlist" data-id="${data.imdbID}">Add to Watchlist</button>
