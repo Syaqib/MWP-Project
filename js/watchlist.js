@@ -32,6 +32,7 @@ $(document).ready(function() {
                         <img src="${movieDetails.Poster}" alt="${movieDetails.Title}">
                         <h2>${movieDetails.Title} (${movieDetails.Year})</h2>
                         <p>${movieDetails.Plot}</p>
+                        <button class="remove-button">Remove from Watchlist</button>
                     </div>
                 `;
                 $container.append(movieElement);
@@ -39,6 +40,16 @@ $(document).ready(function() {
         });
     }
 
-    // Call the function to populate the watchlist on page load
-    populateWatchlist();
+    function removeFromWatchlist(movieId){
+        watchlist = watchlist.filter(id => id !== movieId);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        populateWatchlist();
+        location.reload();
+    }
+
+    $('#watchlist-container').on('click', '.remove-button', function(){
+        let movieId = $(this).closest('.movie').data('id');
+        console.log('Movie has been removed from watchlist', movieId);
+        removeFromWatchlist(movieId);
+    });
 });

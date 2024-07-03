@@ -37,6 +37,25 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
+        .remove-button{
+            background-color: #ff4d4d;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-button:hover {
+            background-color: #ff1a1a;
+        }
+
         footer {
             background-color: rgba(31, 68, 102, 0.8);
             color: #fff;
@@ -87,6 +106,7 @@
                                         <a href="movie-details.html?id=${data.imdbID}">
                                             <img src="${data.Poster}" alt="${data.Title} Poster">
                                         </a>
+                                        <button class="remove-button">Remove from Watchlist</button>
                                     </div>
                                 `;
                                 $('#watchlist-container').append(movieItem);
@@ -97,5 +117,6 @@
             }
         });
     </script>
+    <script src="js/watchlist.js"></script>
 </body>
 </html>
