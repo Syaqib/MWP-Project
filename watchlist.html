@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional Styles for Watchlist Page */
+        #watchlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .movie {
+            background-color: rgba(31, 68, 102, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .movie:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(31, 68, 102, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <nav>
+                <a href="index.html" class="home-button">Home</a>
+                <a href="watchlist.html" class="watchlist-button">Watchlist</a>
+            </nav>
+        </div>
+        <div class="header-container">
+            <h1>My Watchlist</h1>
+        </div>
+    </header>
+    <div id="watchlist-container">
+        <!-- Movie details will be populated here -->
+    </div>
+    <footer>
+        <p>All rights reserved. FilmFusion 2024</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+            if (watchlist.length === 0) {
+                $('#watchlist-container').html('<p>No movies in watchlist</p>');
+            } else {
+                watchlist.forEach(function(movieId) {
+                    $.ajax({
+                        url: `http://www.omdbapi.com/?i=${movieId}&apikey=52d4ad03`,
+                        method: 'GET',
+                        success: function(data) {
+                            if (data.Response === "True") {
+                                let movieItem = `
+                                    <div class="movie" data-id="${data.imdbID}">
+                                        <a href="movie-details.html?id=${data.imdbID}">
+                                            <img src="${data.Poster}" alt="${data.Title} Poster">
+                                        </a>
+                                    </div>
+                                `;
+                                $('#watchlist-container').append(movieItem);
+                            }
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

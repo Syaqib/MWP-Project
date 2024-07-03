@@ -29,16 +29,21 @@ header h1 {
     font-size: 36px;
 }
 
-nav .home-button {
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav .home-button, nav .watchlist-button {
     color: #fff;
     padding: 10px 20px;
-    margin: 1200px;
+    margin: 0 10px; /* Adjusted margin for spacing between buttons */
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
-nav .home-button:hover {
+nav .home-button:hover, nav .watchlist-button:hover {
     background-color: #1a4069;
 }
 
