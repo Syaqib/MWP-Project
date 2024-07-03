@@ -88,7 +88,6 @@ $(document).ready(function() {
                                               <p><strong>Duration: </strong> ${movie.Runtime}</p>
                                               <p><strong>Release Date:</strong> ${movie.Released}</p>
                                               <p><strong>Cast:</strong> ${movie.Actors}</p>
-                                              <button id="add-to-watchlist" data-id="${data.imdbID}">Add to Watchlist</button>
                                             </div>  
                                         </div>
                                         </li>
