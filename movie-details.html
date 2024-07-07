@@ -19,6 +19,28 @@
         </div>
     </header>
     <div id="movie-details"></div>
+    
+        <div id="review-section">
+            <h2>Leave a Review</h2>
+            <form id="review-form">
+                <textarea id="review-text" placeholder="Write your review here..." maxlength="200"></textarea>
+                <div id="word-count">0/200 words</div>
+                <label for="rating">Rating:</label>
+                <div id="rating-stars">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="rating" value="5">
+                <button type="submit">Submit Review</button>
+            </form>
+            <div id="reviews-container">
+                <h2>Reviews</h2>
+                <!-- Reviews will be displayed here -->
+            </div>
+        </div>
 
     <footer>
         <p>All rights reserved. FilmFusion 2024</p>
