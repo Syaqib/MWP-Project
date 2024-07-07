@@ -47,7 +47,7 @@ $(document).ready(function() {
                 <div class="movie-item" data-id="${movie.imdbID}">
                     <img src="${movie.Poster}" alt="${movie.Title} Poster">
                     <h4>${movie.Title} (${movie.Year})</h4>
-                    <div class="review-info">⭐ ${averageRating.toFixed(1)} - User's review: ${reviewCount}</div>
+                    <div class="review-info">⭐ ${averageRating.toFixed(1)} <span style="color: gold;">(${reviewCount} reviews)</span></div>
                 </div>
             `;
             container.append(movieItem);
